@@ -18,17 +18,12 @@ body {
 .human-choice-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 40px;
-  margin-top: 30px;
-}
-
-.title {
-  text-align: center;
 }
 
 .result-container {
   text-align: center;
-  margin-top: 20px;
 }
 
 .score-container, .choice-container {
@@ -41,6 +36,10 @@ body {
 .icon {
   width: 40px;
   height: 40px;
+  border-radius: 20px;
+  border: 3px solid black;
+  object-fit: contain;
+  padding: 3px;
 }
 
 .choice {
@@ -66,7 +65,30 @@ body {
 }
 
 .result {
-  margin: 10px 0;
+  margin: 5px 0;
 }
 
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
 
+.replay-button {
+  color: white;
+  background-color: black;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 20px;
+  display: none;
+}
+
+.replay-button:hover {
+  background-color: yellow;
+  color: black;
+}
+
+.view-replay-button {
+  display: initial;
+}

@@ -110,14 +110,31 @@ function playGame(humanSelection) {
       const winnerDiv = document.querySelector(".title");
       winnerDiv.textContent = `Oops! Computer beats you!`;
     }
+    if (winner) {
+      const replay = document.querySelector(".replay-button");
+      replay.classList.add("view-replay-button");
+    }
   }
 }
 
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll(".human-choice");
 buttons.forEach(button => {
-  button.addEventListener('click', () => {
+  button.addEventListener("click", () => {
     const humanSelection = button.id;
     playGame(humanSelection);
   })
 });
 
+const replay = document.querySelector(".replay-button");
+replay.addEventListener("click", () => {
+  humanScore = 0;
+  computerScore = 0;
+  round = 1;
+  winner = "";
+  replay.classList.remove("view-replay-button");
+  document.querySelector(".title").textContent = "Make a choice! Can you beat the Computer?";
+  document.querySelector(".round").textContent = "";
+  document.querySelector(".choice-container").innerHTML = "";
+  document.querySelector(".result").innerHTML = "";
+  document.querySelector(".score-container").innerHTML = "";
+});
